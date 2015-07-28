@@ -1,10 +1,13 @@
 digraph G{
 
 node [shape=box];
-a1 [label="Emre Karakoc\nSimon Fraser University, Canada 2007"];
-a2 [label="Fereydoun Hormozdiari\nSimon Fraser University, Canada 2011"];
-a4 [label="Raheleh Salari\nSimon Fraser University, Canada 2010"];
-a3 [label="Gurkan Bebek\nCase Western Reserve University, USA, 2005"];
+a7 [label="Faraz Hach\nSimon Fraser University, Canada 2013"];
+a6 [label="Iman Hajirasouliha\nSimon Fraser University, Canada 2012"];
+a5 [label="Phuong Dao\nSimon Fraser University, Canada 2012"];
+a4 [label="Fereydoun Hormozdiari\nSimon Fraser University, Canada 2011"];
+a3 [label="Raheleh Salari\nSimon Fraser University, Canada 2010"];
+a2 [label="Emre Karakoc\nSimon Fraser University, Canada 2007"];
+a1 [label="Gurkan Bebek\nCase Western Reserve University, USA, 2005"];
 n1 [label="Can Alkan \nCase Western Reserve University, USA, 2005"];
 n2 [label="S. Cenk Sahinalp \nUniversity of Maryland, USA, 1997"];
 n3 [label="Uzi Vishkin \nTechnion-Israel Institute of Technology, Israel, 1981"];
@@ -62,10 +65,13 @@ n54 [label="Evangelista Torricelli\nUniversità di Roma La Sapienza\n"];
 
 n2->n1;
 n3->n2;
-n2->a3;
+n2->a7;
+n2->a6;
+n2->a5;
 n2->a4;
-n2->a1;
+n2->a3;
 n2->a2;
+n2->a1;
 n3->n24;
 n4->n3;
 n5->n4;
