@@ -14,14 +14,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: configure
-      run: ./configure
+    - name: Comple LaTeX
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: calkan_cv.tex
 
-    - name: Install dependencies
-      run: make
-
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
+    - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: calkan_cv.pdf
