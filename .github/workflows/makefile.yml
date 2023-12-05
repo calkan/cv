@@ -24,3 +24,10 @@ jobs:
       with:
         name: PDF
         path: calkan_cv.pdf
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: calkan_cv.pdf
+
+
