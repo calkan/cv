@@ -21,15 +21,28 @@ jobs:
       with:
         root_file: calkan_cv.tex
 
-    - name: Upload PDF file
-      uses: actions/upload-artifact@v3
-      with:
-        name: PDF
-        path: calkan_cv.pdf
+    - name: Check pdf file
+      run: |
+        file calkan_cv.pdf | grep -q ' PDF '
+    - name: Upload calkan_cv.pdf
+      run: |
+        # configure git
+        git config --global user.name "Can Alkan"
+        git config --global user.email "calkan@gmail.com"
 
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: calkan_cv.pdf
+        # setup ssh
+        mkdir ~/.ssh
+        chmod 700 ~/.ssh
+        echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
+        git clone --depth=1 git@github.com:BilkentCompGen/BilkentCompGen.github.io.git "$GITHUB_WORKSPACE/website"
+        cp -f calkan_cv.pdf "$GITHUB_WORKSPACE/website/pdfs/team/calkan_cv.pdf"
+        cd "$GITHUB_WORKSPACE/website"
+        git add pdfs/team/calkan_cv.pdf
+        git commit -m "[github actions] update calkan_cv"
+        git push
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
