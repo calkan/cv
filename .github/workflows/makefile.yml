@@ -30,20 +30,17 @@ jobs:
         git config --global user.name "Can Alkan"
         git config --global user.email "calkan@gmail.com"
 
-        # setup ssh
-        mkdir ~/.ssh
-        chmod 700 ~/.ssh
-        echo "key : " "$DEPLOY_KEY"
-        echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
-        git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
-
         git clone --depth=1 git@github.com:BilkentCompGen/BilkentCompGen.github.io.git "$GITHUB_WORKSPACE/website"
         cp -f calkan_cv.pdf "$GITHUB_WORKSPACE/website/pdfs/team/calkan_cv.pdf"
         cd "$GITHUB_WORKSPACE/website"
         git add pdfs/team/calkan_cv.pdf
         git commit -m "[github actions] update calkan_cv"
-        git push
+        git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
       env:
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+          PULL_REQUEST_BODY: Updates cv
+          PULL_REQUEST_BRANCH: main
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
