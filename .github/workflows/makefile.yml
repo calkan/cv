@@ -33,6 +33,7 @@ jobs:
         cd "$GITHUB_WORKSPACE/website"
         git add pdfs/team/calkan_cv.pdf
         git commit -m "[github actions] update calkan_cv"
+        echo "will push: " "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
         git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
       env:
         GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
