@@ -30,6 +30,7 @@ jobs:
         echo "$GITHUB_TOKEN"
         git clone "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git" "$GITHUB_WORKSPACE/website"
         cp -f calkan_cv.pdf "$GITHUB_WORKSPACE/website/pdfs/team/calkan_cv.pdf"
+        git config credential.helper store
         cd "$GITHUB_WORKSPACE/website"
         git add pdfs/team/calkan_cv.pdf
         git commit -m "[github actions] update calkan_cv"
