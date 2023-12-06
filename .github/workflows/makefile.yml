@@ -35,8 +35,8 @@ jobs:
         git commit -m "[github actions] update calkan_cv"
         # git remote add origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
         echo "will push: " "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
-        git push --set-upstream origin master
-        # git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
+        # git push --set-upstream origin master 
+        git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
       env:
         GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
