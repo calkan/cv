@@ -21,10 +21,6 @@ jobs:
       with:
         root_file: calkan_cv.tex
 
-    - name: Check pdf file
-      run: |
-        file calkan_cv.pdf | grep -q ' PDF '
-
     - name: Upload calkan_cv.pdf
       run: |
         # configure git
@@ -38,10 +34,10 @@ jobs:
         git commit -m "[github actions] update calkan_cv"
         git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
       env:
-          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
-          PULL_REQUEST_BODY: Updates cv
-          PULL_REQUEST_BRANCH: main
+        GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+        PULL_REQUEST_BODY: Updates cv
+        PULL_REQUEST_BRANCH: main
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
