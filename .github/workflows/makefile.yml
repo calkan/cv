@@ -26,7 +26,7 @@ jobs:
         # configure git
         git config --global user.name "Can Alkan"
         git config --global user.email "calkan@gmail.com"
-        echo "$GITHUB_ACTOR"
+        echo "my name is " "$GITHUB_ACTOR"
         echo "$GITHUB_TOKEN"
         git clone "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git" "$GITHUB_WORKSPACE/website"
         cp -f calkan_cv.pdf "$GITHUB_WORKSPACE/website/pdfs/team/calkan_cv.pdf"
