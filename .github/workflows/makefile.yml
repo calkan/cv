@@ -3,8 +3,6 @@ name: Makefile CI
 on:
   push:
     branches: [ "master" ]
-    tags:
-      - cv_pdf
   pull_request:
     branches: [ "master" ]
 
@@ -21,23 +19,9 @@ jobs:
       with:
         root_file: calkan_cv.tex
 
-    - name: Upload calkan_cv.pdf
-      run: |
-        # configure git
-        git config --global user.name "Can Alkan"
-        git config --global user.email "calkan@gmail.com"
-        echo "my name is " "$GITHUB_ACTOR"
-        echo "$GITHUB_TOKEN"
-        git clone "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git" "$GITHUB_WORKSPACE/website"
-        cp -f calkan_cv.pdf "$GITHUB_WORKSPACE/website/pdfs/team/calkan_cv.pdf"
-        git config credential.helper store
-        cd "$GITHUB_WORKSPACE/website"
-        git add pdfs/team/calkan_cv.pdf
-        git commit -m "[github actions] update calkan_cv"
-        # git remote add origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
-        echo "will push: " "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
-        # git push --set-upstream origin master 
-        git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/BilkentCompGen/BilkentCompGen.github.io.git"
+    - name: Push new pdf
+      uses: mikeal/publish-to-github-action@master
+
       env:
         GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
