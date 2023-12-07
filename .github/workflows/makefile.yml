@@ -43,6 +43,7 @@ jobs:
         source_file: 'calkan_cv.pdf'
         destination_repo: 'BilkentCompGen/BilkentCompGen.github.io'
         destination_folder: 'pdfs/team'
+        destination_branch: master
         user_email: 'calkan@gmail.com'
         user_name: 'calkan'
         commit_message: 'calkan_cv pdf update'
