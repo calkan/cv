@@ -38,7 +38,7 @@ jobs:
     - name: Push to web page
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        API_TOKEN_GITHUB: ${{ secrets.CV_TOKEN }}
       with:
         source_file: 'calkan_cv.pdf'
         destination_repo: 'BilkentCompGen/BilkentCompGen.github.io'
