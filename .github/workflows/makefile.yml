@@ -34,3 +34,15 @@ jobs:
         PULL_REQUEST_BRANCH: main
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
+    - name: Push to web page
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'calkan_cv.pdf'
+        destination_repo: 'BilkentCompGen/BilkentCompGen.github.io'
+        destination_folder: 'pdfs/team'
+        user_email: 'calkan@gmail.com'
+        user_name: 'calkan'
+        commit_message: 'calkan_cv pdf update'
