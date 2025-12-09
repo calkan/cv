@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{multirow}
-
+\usepackage[hidelinks]{hyperref}
 \oddsidemargin -.5in
 \evensidemargin -.5in
 \textwidth=6.0in
@@ -61,16 +61,16 @@
 
   
 \section{\sc Research Interests}
-    Combinatorial algorithms for analyzing high throughput sequencing data, 
-    genomic structural variation,  human and primate
-    segmental duplications, and hardware acceleration of bioinformatics algorithms. 
+    Combinatorial algorithms for analyzing biological sequences, 
+    genomic structural variation, pangenomics, and hardware acceleration of bioinformatics workloads using processing-in-memory, NPU, GPU, and FPGA. 
 
 \section{\sc Experience}
     {\bf Department of Computer Engineering, Bilkent University}, Bilkent, Ankara, Turkey
                  
     \vspace{-.3cm}
         {\em Associate Professor} \hfill {\bf April 2021 - present}\\ 
-        {\em Assistant Professor} \hfill {\bf January 2012 - April 2021} 
+        {\em Assistant Professor} \hfill {\bf January 2012 - April 2021} \\
+        
             
     {\bf Seven Bridges Genomics}, Cambridge, MA, United States                
           
@@ -171,34 +171,33 @@
     
     \item
     Horizon Europe EIC Pathfinder, 2022-2026\\
-    Title: Processing-in-memory architectures and programming libraries for bioinformatics algorithms (BioPIM)\\
+    Title: Processing-in-memory architectures and programming libraries for bioinformatics algorithms (BioPIM).\\
     Goal: Accelerate bioinformatics applications through leveraging the Processing-in-Memory (PIM) technologies.\\
     Coordinator: Can Alkan\\
     Team Leaders: Onur Mutlu (ETH Zürich), Rayan Chikhi (Institut Pasteur), Dominique Lavenier (CNRS), Abu Sebastian (IBM Zürich), Ran Ginosar (Technion), Yann Falevoz (UPMEM), Leonid Yavits (Bar-Ilan).
-    
-   \item
-   NVIDIA Applied Research Accelerator Program, 2023-2025\\
-   Title: Fast pathogen screening using DNA sequencing in disaster-stricken areas\\
-   Goal: Sequencing-based identification of pathogens quickly using Jetson Nano kits.\\
-   PI: Can Alkan
+
 
   \end{list2}
 
 
 \vspace{-0.5cm}
-                                       \subsection{\small \sc ~~~~Previous}
-                                       \begin{list2}
-                                       
+        \subsection{\small \sc ~~~~Previous}
+        \begin{list2}
+                
+                                         \item
+        NVIDIA Applied Research Accelerator Program, 2023-2025\\
+        Title: Fast pathogen screening using DNA sequencing in disaster-stricken areas.\\
+        Goal: Sequencing-based identification of pathogens quickly using Jetson Nano kits.\\
+        PI: Can Alkan
                                        \item
         Afyon Health Sciences University, 2020-2021\\
-        Title: Developing rapid diagnostic kit for sepsis (Sepsi-Fast)\\
+        Title: Developing rapid diagnostic kit for sepsis (Sepsi-Fast).\\
         Goal: Determine antibiotic resistance and susceptibility in newborn sepsis cases.\\
         PI: Nurullah Okumuş
                                        \item
                                          Scientific and Technical Research Council of Turkey (T\"{U}B\.{I}TAK-2546-115E596), 2017-2019\\
-                                         Title: BacGenTrack – an integrated system for bacterial genome tracking using high throughput sequencing technology: from identification to visualization.\\
-                                         Goal: Develop a user-friendly web system and novel analysis algorithms needed to facilitate the analysis and provide
-                                         the essential data sharing tools necessary for its effective use in the field of molecular epidemiology\\
+                                         Title: BacGenTrack – an integrated system for bacterial genome tracking using high-throughput sequencing technology: from identification to visualization.\\
+                                         Goal: Develop a user-friendly web system and novel analysis algorithms needed to facilitate the analysis and provide the essential data sharing tools necessary for its effective use in the field of molecular epidemiology.\\
                                          PI: Can Alkan and Joao Andre Carriço
 
                                        
@@ -247,7 +246,7 @@
                                        \item
                                          National Institutes of Health (R01 HG006004), 2011-2016\\
                                          Title: Novel algorithms and hardware designs for ultra-fast next-gen sequence analysis.\\
-                                         Goal: Develop specialized hardware architectures to accelerate mapping reads generated with the high throughput sequencing platforms.\\
+                                         Goal: Develop specialized hardware architectures to accelerate mapping reads generated with the high-throughput sequencing platforms.\\
                                          PI: Onur Mutlu\\
                                          Co-PI: Can Alkan
 
@@ -298,10 +297,7 @@
 
 \vspace*{-.4cm}
 \subsection{\small \sc M.Sc.}
-\begin{list2}
-    \item
-  {\bf Ömer Yavuz Öztürk:} Computer Engineering, Fall 2022 - present.
-  Bilkent University. 
+\begin{list2}    
   \item
   {\bf Ecem İlgün:} Computer Engineering, Spring 2023 - present. Bilkent University. 
   \item 
@@ -321,7 +317,9 @@
 \vspace*{-.4cm}
   \subsection{\small \sc Undergraduate Volunteers}
   \begin{list2}
-\item \textbf{Bora Balcı:} B.Sc. student in Computer Engineering,  Bilkent University. Since Spring 2025.
+\item \textbf{Ata Oğuz:} B.Sc. student in Computer Engineering,  Bilkent University. Since Fall 2025.
+\item \textbf{Mehmet Akif Yavuz:} B.Sc. student in Computer Engineering,  Bilkent University. Since Fall 2025.
+\item \textbf{Serdar Bozdağ:} B.Sc. student in Computer Engineering,  Bilkent University. Since Summer 2025.
 \item \textbf{Ege Şirvan:} B.Sc. student in Computer Engineering,  Bilkent University. Since Spring 2025.
 \item \textbf{Toygar Tanrıverdi:} B.Sc. student in Computer Engineering,  Hacettepe University. Since Spring 2025.
 \item {\bf Şeyma Kılıç:} B.Sc. student in Computer Engineering,  Bilkent University. Since Fall 2023.
@@ -336,11 +334,14 @@
 %  \item \textbf{Murat Eren Güven:} B.Sc. student in Computer Engineering,  Hacettepe University. January-February, 2025.
 %  \end{list2} 
   
-%\vspace*{-.4cm}    
-%  \subsection{\small \sc Undergraduate Students in the Research Project Course}
-% \begin{list2}  
- 
-% \end{list2}
+\vspace*{-.4cm}    
+  \subsection{\small \sc Undergraduate Students in the Research Project Course}
+\begin{list2}  
+\item \textbf{Ata Soykal}: r-index for LCP cores, Fall 2025. 
+\item \textbf{Furkan Başıbüyük}: Pangenomic extensions to the AirLift algorithm, Fall 2025. 
+\item \textbf{Emir Tomrukçu}: NPU acceleration of the Pair-HMM algorithm, Fall 2025. 
+\item \textbf{Bertan Uran}: NPU acceleration of the GQT algorithm, Fall 2025. 
+\end{list2}
 
 \section{\sc Students and Interns (Alumni)}
 \vspace*{-.4cm}
@@ -364,14 +365,15 @@
   ``Algorithms for structural variation discovery using multiple sequence signatures''\\
     %{\it now: Assistant Professor at Konya Food and Agriculture University.}
     {\it after Bilkent: Postdoctoral Fellow at Heinrich Heine University. now: Assistant Professor at Necmettin Erbakan University.}
+
+\clearpage
+
 \item
   {\bf Mohammed Alser:} Ph.D., Computer Engineering, Summer 2018.
   Bilkent University.\\ Co-supervisor: Onur Mutlu.\\
   ``Accelerating the understanding of life’s code through better algorithms and hardware design''\\
   {\it after Bilkent: Postdoctoral Fellow and Instructor at ETH Zürich. now: Assistant Professor at Georgia State University.}
 \end{list2}
-
-\clearpage
 
 \vspace*{-.4cm}
 \subsection{\small \sc Ph.D. (as co-supervisor)}
@@ -392,6 +394,10 @@ Co-supervised with Aybar Can Acar.
 \vspace*{-.4cm}
 \subsection{\small \sc M.Sc.}
 \begin{list2}
+\item
+  {\bf Ömer Yavuz Öztürk:} Computer Engineering, Summer 2025.
+  Bilkent University. \\
+  ``Sequence-to-Graph Alignment on a Processing-In-Memory System''
   \item
     {\bf Klea Zambaku:} Computer Engineering, Summer 2025.
     Bilkent University. \\
@@ -442,19 +448,21 @@ Co-supervised with Aybar Can Acar.
   Bilkent University. \\
   ``A cryptocurrency incentivized voluntary grid computing platform for DNA read alignment''\\
   {\it after Bilkent: software engineer, OpsGenie. now: software engineer, Google London.}
+\clearpage
+
 \item
   {\bf Balanur İçen:} M.Sc., Computer Engineering, Summer 2019.
   Bilkent University. {\it started the program in Fall 2016 under the supervision of Assoc. Prof. Selim Aksoy.}\\
   ``Breakpoint refinement of genomic structural variation using split read analysis'' \\
   {\it after Bilkent: software engineer, K12Net.}
+
+
 \item
   {\bf Fatih Karaoğlanoğlu:} M.Sc., Computer Engineering, Summer 2018.
   Bilkent University. \\
   ``Characterization of large structural variation using Linked-Reads''\\
   {\it after Bilkent: Ph.D. at Simon Fraser University.}
   
-\clearpage
-
 \item
   {\bf F. Tuğba Doğan:} M.Sc., Computer Engineering, Spring 2018.
   Bilkent University. \\
@@ -709,6 +717,17 @@ Advisor: Mehmet Somel. Middle East Technical University.
 \subsection{\small \sc M.Sc.}
 \begin{list2}
 \item
+  {\bf Berk Çiçek:} M.Sc., Computer Engineering, Summer 2025.
+  Advisor: Özgür S. Öğüz.
+  Bilkent University.
+
+\item
+  {\bf Barış Bilgin Şenol:} M.Sc., Computer Engineering, Summer 2025.
+  Advisor: Özgür S. Öğüz.
+  Bilkent University.
+
+
+\item
   {\bf Melih Coşğun:} M.Sc., Computer Engineering, Summer 2025.
   Advisor: Sinem Sav.
   Bilkent University.
@@ -717,6 +736,7 @@ Advisor: Mehmet Somel. Middle East Technical University.
   {\bf Yahya Elnouby:} M.Sc., Computer Engineering, Summer 2025.
   Advisor: Eray Tüzün.
   Bilkent University.
+\item
 
   {\bf Sina Barazandeh:} M.Sc., Computer Engineering, Summer 2024.
   Advisor: Ercüment Çiçek.
@@ -790,8 +810,6 @@ Advisor: Mehmet Somel. Middle East Technical University.
   Advisor: Çiğdem Gündüz Demir.
   Bilkent University.
 
-\clearpage
-
 \item
   {\bf M. Yağmur Şahin:} M.Sc. Computer Engineering, Fall 2016. Advisor: Buğra Gedik.
   Bilkent University. 
@@ -831,6 +849,8 @@ Bilkent University.
 \vspace{-0.3cm}
 \subsection{\small \sc University Duties}
 \begin{list2}
+\item   
+    Vice Chair, Department of Computer Engineering, since September 2025.
 \item 
  Member of the Faculty Board and Faculty Executive Board, Faculty of Engineering, Bilkent University, since Fall 2021.
 \item
@@ -852,6 +872,10 @@ Bilkent University.
         \textbf{Steering Committee Member}, RECOMB Conference on Biological Sequence Analysis (RECOMB-Seq), 2017-{\it present}.
 
     \item
+        \textbf{Steering Committee Member}, RECOMB Conference on Hardware Acceleration of Bioinformatics Workloads (RECOMB-Arch), 2025-{\it present}.
+
+
+    \item
         \textbf{General Co-Chair}, 27$^{th}$ Annual International Conference on Research in Computational Molecular Biology (RECOMB), 2023.
 
     \item
@@ -859,6 +883,8 @@ Bilkent University.
 
     \item
         \textbf{Associate Editor}, BMC Bioinformatics, 2010-2021.
+
+\clearpage
 
     \item
         \textbf{Track and Area Co-Chair}, Annual International Conference on Intelligent Systems for Molecular Biology and the European Conference on 
@@ -880,7 +906,6 @@ Bilkent University.
     \item
         \textbf{Program Committee Chair}, First Annual RECOMB Workshop on Massively Parallel Sequencing (RECOMB-seq), March 26-27, 2011, Vancouver, BC, Canada.      
 
-\clearpage
 
     \item
         \textbf{PC Member}, Annual International Conference on Research in Computational Molecular Biology
@@ -962,8 +987,8 @@ Bilkent University.
 \vspace{-0.4cm}
 \subsection{\small \sc Scientific Advisory Boards}
 \begin{list2}
-%\item
-%  Seven Bridges Genomics, Cambridge, MA, United States. 2016 - {\it present}.
+\item
+  Seven Bridges Genomics, Cambridge, MA, United States. 2016 - 2018.
     \item
         Prototype Capital, Los Angeles, CA, United States. 2018 - 2020.
     \item
@@ -1021,20 +1046,22 @@ Bilkent University.
 \vspace{-0.4cm}
 \subsection{\small \sc Senior Project Supervision}
 \begin{list2}
+\item CASSIE: Cloud-based Assembly Streamlined Service Integration Engine, 2025-2026.
+\item Pathogenious: Pathogen identification using edge computing, 2025-2026.
 \item Conferencer: Conference management system, 2024-2025.
 \item YOLLA: Package delivery marketplace, 2024-2025.
 \item TradeBlocs: Crypto-trading platform, 2024-2025.
 \item Evalio: Exam database and management system, 2024-2025.
 \item RestoRun: Restaurant automation application, 2023-2024.
-\item Block Script: an educational visual programming language, 2023-2024.
-\item SoCoolBus:  student school bus tracking system, 2022-2023.
-\item Vanny: virtual nanny, 2022-2023.
+\item Block Script: An educational visual programming language, 2023-2024.
+\item SoCoolBus:  Student school bus tracking system, 2022-2023.
+\item Vanny: Virtual nanny, 2022-2023.
 \item Neutlan: NLP-based detection of gender discrimination in texts, 2022-2023.
-\item Tutorium: online tutoring system, 2022-2023.
-\item Cassett: bicyclist assistance tool, 2021-2022.
-\item ShopEye: personal assistant for visually impaired people, 2021-2022.
-\item Laber: real-time social media analysis, 2021-2022.
-\item onRoute: a road trip assistance tool, 2020-2021.
+\item Tutorium: Online tutoring system, 2022-2023.
+\item Cassett: Bicyclist assistance tool, 2021-2022.
+\item ShopEye: Personal assistant for visually impaired people, 2021-2022.
+\item Laber: Eeal-time social media analysis, 2021-2022.
+\item onRoute: A road trip assistance tool, 2020-2021.
 \item LIBRA: Integrated web-based system to aid diagnosis using clinical sequencing, 2019-2020.
 \item Pengout: Mobile application to find events and organize group outings, 2019.
   \item CryptDist: Content distribution network using the blockchain technology, 2016-2017.
@@ -1077,7 +1104,7 @@ A total of 76 invited talks, seminars, lectures, and keynotes.
   Invited Speaker, 
       {\bf  Acceleration of read mapping through hardware/algorithm co-design.}
   Computational Genomics Summer Institute, University of California, Los Angeles, CA, United States,
-  July 14, 2025..
+  July 14, 2025.
 }
 
 
@@ -1376,6 +1403,7 @@ Invited Speaker,
   Swiss Institute of Allergy and Asthma Research (SIAF), Davos, Switzerland, September 3, 2012.
   }
   
+\clearpage
 
 \item
   Invited Speaker, 
