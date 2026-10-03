@@ -8,34 +8,31 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Compile LaTeX
       uses: xu-cheng/latex-action@v3
       with:
         root_file: calkan_cv.tex
 
-    - name: Push new pdf
-      uses: mikeal/publish-to-github-action@master
-
-      env:
-        GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
-        PULL_REQUEST_BODY: Updates cv
-        PULL_REQUEST_BRANCH: main
-        # DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+    - name: Commit and push new PDF to calkan/cv
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Automated publish: calkan_cv.pdf update [skip ci]"
+        file_pattern: 'calkan_cv.pdf'
 
     - name: Push to web page
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.CV_TOKEN }}
@@ -43,7 +40,7 @@ jobs:
         source_file: 'calkan_cv.pdf'
         destination_repo: 'BilkentCompGen/BilkentCompGen.github.io'
         destination_folder: 'pdfs/team'
-        destination_branch: master
+        destination_branch: 'master'
         user_email: 'calkan@gmail.com'
         user_name: 'calkan'
         commit_message: 'calkan_cv pdf update'
